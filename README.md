@@ -1,2 +1,2 @@
 # learning-GO
-Learning go programing language with the "FullCycle" platform.
+Learning Go(Golang) programing language with the "FullCycle" platform.
