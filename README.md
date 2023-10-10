@@ -1,7 +1,7 @@
 # learning-GO
 Learning Go(Golang) programing language with the "FullCycle" platform.
 
-## [Classes from "fundamentals" repository🔗]([url](https://github.com/LucasFigueiredoDEV/learning-GO/tree/main/fundamentals)):
+## [Classes from "fundamentals" repository🔗](fundamentals/):
 
 | Classes  | Content |
 | ------------- | ------------- |
