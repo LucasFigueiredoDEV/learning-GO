@@ -2,6 +2,24 @@ package main
 
 import "fmt"
 
+type Endereco struct {
+	Logradouro string
+	Numero     int
+	Cidade     string
+	Estado     string
+}
+
+type Pessoa interface {
+	Desativar()
+}
+
+type Empresa struct {
+	Nome string
+}
+
+func (e Empresa) Desativar() {
+}
+
 type Cliente struct {
 	Nome  string
 	Idade int
@@ -9,11 +27,13 @@ type Cliente struct {
 	Endereco
 }
 
-type Endereco struct {
-	Logradouro string
-	Numero     int
-	Cidade     string
-	Estado     string
+func (c Cliente) Desativar() {
+	c.Ativo = false
+	fmt.Printf("O cliente %s foi desativado\n", c.Nome)
+}
+
+func Desativacao(pessoa Pessoa) {
+	pessoa.Desativar()
 }
 
 func main() {
@@ -25,5 +45,10 @@ func main() {
 	lucas.Cidade = "Recife"
 	lucas.Ativo = false         // É possível mudar os valores que estão inseridos na Struct
 	lucas.Estado = "Pernambuco" // Tem a possibilidade de criar composições
+	lucas.Desativar()
 	fmt.Printf("Nome: %s, Idade: %d, Ativo: %t", lucas.Nome, lucas.Idade, lucas.Ativo)
+
+	minhaEmpresa := Empresa{}
+
+	Desativacao(minhaEmpresa)
 }
